@@ -1,0 +1,214 @@
+The Renderware arena is a file format originally designed to store datas for arenas.
+It stores Renderware Objects which are chunks of data or other files.
+The filelist for skate can be found in Skate File Format Documentation\RenderWare\Skate RW Object Type List.txt
+They can also contain base resources for external data (ie non rw objects) usually used for model or texture data.
+Skate it. stores its model and texture data directly in rw objects.
+
+--RW Arena Structure--
+[offset, type, name]
+	Arena
+	{
+		Arena File Header
+		{
+			Arena File Header Magic Number
+			{
+0x00 			uint8 prefix //‰RW4
+0x04			uint8 body 	 (platform specification: ps3 + 0x00, xb2 + 0x00, rev + 0x00, win + 0x00)
+0x08			uint8 suffix //0x0D0A1A0A
+			}
+0x0C		uint8  isBigEndian
+0x0D		uint8  pointerSizeInBits//0x20 (32)
+0x0E		uint8  pointerAlignment //0x04 (4)
+0x0F		uint8  unused 			//0x00 
+0x10		uint32 majorVersion 	//0x34353400 (454 + 0x00)
+0x14		uint32 minorVersion 	//0x30303000
+0x18		uint32 buildNo 			//0x00000000
+		}
+0x1C	uint32 id
+0x20  	uint32 numEntries
+0x24	uint32 numUsed
+0x28	uint32 alignment //(32)
+0x2C  	uint32 virt
+0x30	uint32 DictionaryStart //offset
+0x34  	uint32 Arena Section Manifest //offset
+0x38  	uint32 base //offset
+0x3C 	uint32 m_unfixContext //offset
+0x40  	uint32 m_fixContext //offset
+  		ResourceDescriptor m_resourceDescriptor
+  		{
+	  		BaseResourceDescriptor 
+			{
+0x44			uint32 size 	// this typically is actually the offset to the start of the resource data
+0x48			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x4C			uint32 size
+0x50			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x54			uint32 size
+0x58			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x5C			uint32 size
+0x60			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x64			uint32 size
+0x68			uint32 alignment //alignment will be 1 if unused
+			}
+  		}
+	  	ResourceDescriptor m_resourcesUsed
+		{
+	  		BaseResourceDescriptor 
+			{
+0x6C			uint32 size
+0x70			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x74			uint32 size
+0x78			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x7C			uint32 size
+0x80			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x84			uint32 size
+0x88			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x8C			uint32 size
+0x90			uint32 alignment //alignment will be 1 if unused
+			}
+			////PS3 Only\\\\
+	  		BaseResourceDescriptor
+			{
+0x94			uint32 size
+0x98			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x9C			uint32 size
+0xA0			uint32 alignment //alignment will be 1 if unused
+			}
+		}
+
+	  	TargetResource m_resource
+		{
+0xA4		uint32 m_baseresource //offset
+0xA8		uint32 m_baseresource //offset
+0xAC		uint32 m_baseresource //offset
+0xB0		uint32 m_baseresource //offset
+0xB4		uint32 m_baseresource //offset
+0xB8		uint32 m_baseresource //offset
+0xBC		uint32 m_baseresource //offset
+		}
+
+		////Xbox only\\\\
+	  	
+	  	TargetResource m_resource
+		{
+0x94		uint32 m_baseresource //offset
+0x98		uint32 m_baseresource //offset
+0x9C		uint32 m_baseresource //offset
+0xA0		uint32 m_baseresource //offset
+0xA4		uint32 m_baseresource //offset
+		}
+0xA8  	uint32 m_arenaGroup //offset
+
+		////Wii Only\\\\
+
+0x94	uint32 m_arenaGroup //offset
+
+	}
+
+Arena Sections //start right after the above header or where defined by the section manifest offset in the header. Typically occur in the order listed
+{
+	Arena Section Manifest
+	{
+0x00 	uint32 typeID 		//0x00010004
+0x04 	uint32 numEntries	//usually 4 entries
+0x08	uint32 dictionary 	//offset from start of this section
+	}
+
+	Arena Section Dictionary Entry
+	{
+		uint32 offset to section from start of sections
+	}
+
+	Arena Section Types
+	{
+0x00 	uint32 typeID 		//0x00010005
+0x04 	uint32 numEntries	//number of types
+0x08	uint32 dictionary 	//offset from start of this section
+	}
+
+	//entries typically start with a blank zero entry
+	Arena Section Type Entry
+	{
+		uint32 RW Object ID
+	}
+
+	Arena Section External Arenas
+	{
+0x00 	uint32 typeID 		//0x00010006
+0x04 	uint32 numEntries	
+0x08	uint32 dictionary 	//offset from start of this section
+	}
+
+	External arena thing?
+	{
+0x00	uint32 this arena's id
+0x04	0xFFB00000
+0x08	uint32 this arena's id
+	}
+
+	Arena Section External Arena Entry
+	{
+		uint32 unknown //always zero
+	}
+
+	Arena Section Subreferences
+	{
+0x00 	uint32 typeID 				//0x00010007
+0x04 	uint32 numEntries	
+0x08	uint32 m_dictAfterRefix 	//offset
+0x0C	uint32 m_recordsAfterRefix  //offset
+0x10 	uint32 dictionary 			//offset
+0x14 	uint32 records 				//offset
+0x18 	uint32 numUsed 				//offset
+	}
+
+	Arena Section Atoms
+	{
+0x00 	uint32 typeID 		//0x00010008
+0x04 	uint32 numEntries	//never seen this not be zero
+0x08	uint32 Atom Table 	//never seen this not be zero
+	}
+
+}
+
+Arena Dictionary Entry
+{
+0x00	uint32 ptr 	 	 //absolute offset in the file. if it is a base resource however, it is the offset to the resource from the start of the resources.
+0x04  	uint32 reloc 	 //ive never seen this not be zero
+0x08  	uint32 size 	 //size of the entry
+0x0C  	uint32 alignment //alignment of the entry
+0x10  	uint32 typeIndex //This refers to the index of the type in the types section.
+0x14  	uint32 typeId 	 //RW Object type ID
+}
+
+Arena Subreference Record
+{
+0x00	uint32 objectID
+0x04 	uint32 offset //offset within the item
+}
