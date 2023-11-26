@@ -1,0 +1,29 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} aabboxquery"/>
+    <property name="example.aabboxquery.buildtype" value="Program"/>
+
+    <property name="example.aabboxquery.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.aabboxquery.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.aabboxquery.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/aabboxquery/*.cpp" />
+    </fileset>
+
+    <fileset name="example.aabboxquery.headerfiles">
+      <includes name="${package.dir}/examples/aabboxquery/*.h" />
+    </fileset>
+
+</project>

@@ -1,0 +1,29 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} runtimeclusteredmeshbuilder"/>
+    <property name="example.runtimeclusteredmeshbuilder.buildtype" value="Program"/>
+
+    <property name="example.runtimeclusteredmeshbuilder.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.runtimeclusteredmeshbuilder.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.runtimeclusteredmeshbuilder.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/runtimeclusteredmeshbuilder/*.cpp" />
+    </fileset>
+
+    <fileset name="example.runtimeclusteredmeshbuilder.headerfiles">
+      <includes name="${package.dir}/examples/runtimeclusteredmeshbuilder/*.h" />
+    </fileset>
+
+</project>

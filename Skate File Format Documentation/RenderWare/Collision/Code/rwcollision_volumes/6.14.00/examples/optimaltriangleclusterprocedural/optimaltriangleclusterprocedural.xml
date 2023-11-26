@@ -1,0 +1,30 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} optimaltriangleclusterprocedural"/>
+    <property name="example.optimaltriangleclusterprocedural.buildtype" value="Program"/>
+
+    <property name="example.optimaltriangleclusterprocedural.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.optimaltriangleclusterprocedural.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.optimaltriangleclusterprocedural.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/optimaltriangleclusterprocedural/*.cpp" />
+    </fileset>
+
+    <fileset name="example.optimaltriangleclusterprocedural.headerfiles">
+        <includes name="${package.dir}/examples/optimaltriangleclusterprocedural/*.h" />
+        <includes name="${package.dir}/examples/common/*.h" />
+    </fileset>
+
+</project>

@@ -1,0 +1,35 @@
+<project>
+
+  <property name="example.buildmodules" value="${property.value} meshoperatesma"/>
+  <property name="example.meshoperatesma.buildtype" value="Program"/>
+
+  <property name="example.meshoperatesma.usedependencies">
+    meshoperate_base
+    meshoperate_halfedgemesh
+  </property>
+
+  <property name="example.meshoperatesma.builddependencies">
+    ${rwcollision_volumes.subdependencies}
+    EAMain
+    EAStdC
+    EASTL
+    EAThread
+    PPMalloc
+  </property>
+
+  <property name="example.meshoperatesma.runtime.moduledependencies">
+    rwcclusteredmeshbuilder
+    rwccore
+  </property>
+
+  <fileset name="example.meshoperatesma.sourcefiles">
+    <includes name="${package.dir}/examples/common/*.cpp" />
+    <includes name="${package.dir}/examples/meshoperatesma/*.cpp" />
+  </fileset>
+
+  <fileset name="example.meshoperatesma.headerfiles">
+    <includes name="${package.dir}/examples/meshoperatesma/*.h" />
+    <includes name="${package.dir}/examples/common/*.h" />
+  </fileset>
+
+</project>

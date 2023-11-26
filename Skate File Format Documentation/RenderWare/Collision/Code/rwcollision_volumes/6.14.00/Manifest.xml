@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <manifestVersion>2</manifestVersion>
+  <frameworkVersion>2</frameworkVersion>
+  <isSupported>true</isSupported>
+  <buildable>true</buildable>
+  <owningTeam>Physics</owningTeam>
+  <contactName>EATech</contactName>
+  <contactEmail>eatechguildford@europe.ea.com</contactEmail>
+  <licenseDetails>
+    <license>EA Proprietary (Internal Use Only)</license>
+  </licenseDetails>
+  <tags>eatech, eaphysics, framework2</tags>
+  <homePageUrl>http://docs.ea.com/RWPhysics:rwcollision_volumes</homePageUrl>
+  <summary>
+    This package defines the core collision objects previously in rwphysics_base/5.x, including spatial queries.
+  </summary>
+  <changes>
+    <ul>
+      <li>Removed unittest dependency on trap2.</li>
+      <li>Added osx-x64-clang support.</li>
+      <li>Removed rwcore backwards compatibility support.</li>
+      <li>Changed rwccore_spu library buildtype from builutils, Library_spu to eaconfig SPULibrary.</li>
+	  <li>Removed deprecated API:<ul>
+		<li>rw::physics::GPInstanceBatchIntersect1xN(...)</li>
+		<li>rw::physics::GPInstanceBatchIntersectNx1(...)</li>
+    	<li>rw::physics::PrimitiveBatchInstance</li>
+		<li>rw::physics::PrimitivePairIntersect(...)</li>
+		<li>rw::physics::PrimitiveBatchIntersect1xN(...)</li>
+		<li>rw::physics::PrimitiveBatchIntersectNxM(...)</li>
+		<li>rw::physics::ComputeContactPoints(...)</li>
+		</ul>
+      </li>
+	  <li>Work around an Internal Compiler Error on Xenon with xenonsdk-2.0.21256.  This may introduce a small loss in performance.</li>
+    </ul>
+  </changes>
+  <status>Prerelease</status>
+  <statusComment>Waiting for final integration testing - see package server for latest status</statusComment>
+  <sourceLocation>//EAOS/Physics/Stable/rwcollision_volumes/dev</sourceLocation>
+  <driftVersion>dev</driftVersion>
+  <relationship>
+    <builds>
+      <build name="solution" supported="true" targets="slnruntime incredibuild slntest incredibuild-test slnexample incredibuild-example"/>
+      <build name="nant" supported="true" targets="build test-build example-build" />
+      <build name="test" supported="true" targets="test-run-fast" defines="test.run.args=-v"/>
+    </builds>
+    <platforms>
+      <platform name="pc" build="Supported" test="Supported" configs="pc-vc-dev" />
+      <platform name="pc64" build="Supported" test="Supported" configs="pc64-vc-dev" />
+      <platform name="xenon" build="Supported" test="Supported" />
+      <platform name="ps3" build="Supported" test="Supported" />
+      <platform name="unix" build="Supported" test="Supported" />
+      <platform name="unix64" build="Supported" test="Supported" />
+      <platform name="iphone" build="Supported" test="Supported" />
+      <platform name="iphonesim" build="Supported" test="Supported" />
+      <platform name="android" build="Supported" test="Supported" />
+      <platform name="capilano" build="Supported" test="Supported" />
+      <platform name="kettle" build="Supported" test="Supported" />
+      <platform name="osx" build="Supported" test="Supported" configs="osx-x64-clang"/>
+    </platforms>
+  </relationship>
+</package>

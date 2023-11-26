@@ -1,0 +1,25 @@
+<project>
+
+    <include file="aabboxquery/aabboxquery.xml"/>
+    <include file="implicitsurfacesma/implicitsurfacesma.xml"/>
+    <include file="flattenmappedarray/flattenmappedarray.xml"/>
+    <include file="linetest/linetest.xml"/>
+    <include file="kdtreebuilder/kdtreebuilder.xml"/>
+    <include file="offlineclusteredmeshbuilder/offlineclusteredmeshbuilder.xml"/>
+    <include file="runtimeclusteredmeshbuilder/runtimeclusteredmeshbuilder.xml"/>
+    <include file="triangleclusterprocedural/triangleclusterprocedural.xml"/>
+    <include file="optimaltriangleclusterprocedural/optimaltriangleclusterprocedural.xml"/>
+    <include file="trianglesoupcluster/trianglesoupcluster.xml"/>
+    <include file="trianglesoupsma/trianglesoupsma.xml"/>
+    <include file="scaledclusteredmesh/scaledclusteredmesh.xml"/>
+
+    <!-- These examples don't currently build for unix as meshoperate has not been ported yet -->
+    <do unless="unix == ${config-system} or unix64 == ${config-system} or
+                iphone == ${config-system} or iphonesim == ${config-system}">
+        <include file="edgecosine/edgecosine.xml"/>
+        <include file="meshoperateclusteredmesh/meshoperateclusteredmesh.xml"/>
+        <include file="meshoperatesma/meshoperatesma.xml"/>
+        <include file="skateclusteredmesh/skateclusteredmesh.xml"/>
+    </do>
+
+</project>

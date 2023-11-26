@@ -1,0 +1,30 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} triangleclusterprocedural"/>
+    <property name="example.triangleclusterprocedural.buildtype" value="Program"/>
+
+    <property name="example.triangleclusterprocedural.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.triangleclusterprocedural.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.triangleclusterprocedural.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/triangleclusterprocedural/*.cpp" />
+    </fileset>
+
+    <fileset name="example.triangleclusterprocedural.headerfiles">
+        <includes name="${package.dir}/examples/triangleclusterprocedural/*.h" />
+        <includes name="${package.dir}/examples/common/*.h" />
+    </fileset>
+
+</project>

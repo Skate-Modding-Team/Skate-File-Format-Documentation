@@ -1,0 +1,186 @@
+<project>
+
+    <dependent name="benchmarkenvironment"/>
+    <dependent name="eaphysics_unitframework"/>
+  
+    <!-- enable deployment for consoles by editing this or setting package.consoledeployment=true on the command line -->
+    <property name="package.consoledeployment" value="false"/>
+    <property name="test.customvcprojremoteroot" value="xe:\${package.name}" if="xenon == ${config-system}"/>
+
+    <!-- Generate tests to verify each header can be compiled standalone -->
+    <task name="TestHeaders" usedependencies="${rwcollision_volumes.subdependencies} EASTL" unless="@{PropertyExists('skipTestHeaders')}" />
+
+    <!-- default warning suppression is currently too aggresive for this package and rwmath/1.09.00 -->
+    <!-- EASTL generates warning C4668 - 'foobar' is not defined as a preprocessor macro -->
+    <property name="test.headers_x86.warningsuppression" if="vc == ${config-compiler}">
+      -wd4820
+      -wd4710
+      -wd4738
+      -wd4668
+    </property>
+    <property name="test.headers_x64.warningsuppression" if="vc == ${config-compiler}">
+      ${test.headers_x86.warningsuppression}
+      -wd4324
+    </property>
+    <property name="test.headers_xbox360.warningsuppression" if="vc == ${config-compiler}">
+      ${test.headers_x86.warningsuppression}
+      -wd4640
+      -wd4061
+      -wd4062
+    </property>
+    <!-- eastl fails in ps3-gcc configurations, due to inline methods being used before being declared inline -->
+    <property name="test.headers_ppu.warningsuppression.ps3" unless="sn == ${config-compiler}">
+      -Wno-inline
+    </property>
+    <!-- eastl fails in iphone and iphonesim opt configurations, due to inline methods being used before being declared inline -->
+    <property name="test.headers_arm.warningsuppression.iphone">
+      -Wno-inline
+    </property>
+    <property name="test.headers_x86.warningsuppression.iphone">
+      -Wno-inline
+    </property>
+
+  <!-- Add test buildmodules for each of the subfolders (which are assumed to contain tests) -->
+    <foreach property="testdir" item="String" in="core linequery clusteredmeshbuilder">
+        <property name="path" value="@{PathGetFullPath(${testdir})}"/>
+        <property name="testname" value="test-collision-@{PathGetFileName('${path}')}"/>
+
+        <!-- Build up a list of all the unit tests to run, so that we can override it from the command line. -->
+        <property name="${package.name}.tests" value="${property.value} test-collision-${testdir}"/>
+
+        <!-- Tool group is used to build tests with serialization data creation enabled (pc only) -->
+        <property name="tool.${testname}.workingdir" value="${package.dir}/tests/rwunittestdata"/>
+        <property name="tool.${testname}.defines">
+            CREATE_SERIALIZATION_TEST_DATA
+        </property>
+        <foreach item="String" in="test tool" property="group">
+        <!-- Add Program to list of test targets -->
+            <property name="${group}.buildmodules" value="${property.value} ${testname}"/>
+            <property name="${group}.${testname}.buildtype" value="EaPhysicsUnitProgram"/>
+            
+            <!-- Disable visualdebugger when running automated tests -->
+            <property name="${group}.${testname}.run.args" value="-novdb"/>
+            <property name="${group}.${testname}.run.args" value="${property.value} ${test.run.args}" if="@{PropertyExists('test.run.args')}"/>
+            
+            <property name="${group}.${testname}.runtime.moduledependencies">
+                rwccore
+                ${property.value}
+                rwcclusteredmeshbuilder
+            </property>
+
+            <property name="${group}.${testname}.builddependencies">
+            ${rwcollision_volumes.subdependencies}
+            ${eaphysics_unitframework.dependencies}
+            benchmarkenvironment
+        </property>
+            <property name="${group}.${testname}.builddependencies" if="clusteredmeshbuilder == ${testdir}">
+                ${property.value}
+                EASTL
+            </property>
+
+        <!-- Workaround bug in Nant/eaconfig/NAntToVSTools -->
+        <property name="${group}.${testname}.usedependencies">
+            ${eaphysics_unitframework.dependencies}
+        </property>
+
+        <property name="${group}.${testname}.defines" if="@{PropertyExists('eaphysics_unitframework.defines')}">
+            ${property.value}
+            ${eaphysics_unitframework.defines}
+        </property>
+
+        <!-- Source files are all files in subfolder plus unit test framework -->
+            <fileset name="${group}.${testname}.sourcefiles">
+            <includes name="${path}/*.cpp"/>
+            <includes name="${package.dir}/tests/shared/*.cpp"/>
+            <includes name="${package.eaphysics_unitframework.dir}/source/entrypoint.cpp"/>
+        </fileset>
+
+        <!-- TODO: disabled bulk builds due to multiply defined symbols -->
+            <!-- <fileset name="${group}.${testname}.bulkbuild.sourcefiles" fromfileset="${group}.${testname}.sourcefiles"/> -->
+
+            <fileset name="${group}.${testname}.headerfiles">
+            <includes name="${path}/*.hpp"/>
+            <includes name="${package.dir}/tests/shared/*.hpp"/>
+        </fileset>
+
+            <property name="${group}.${testname}.includedirs">
+            ${package.${package.name}.includedirs}
+            ${package.dir}/tests/shared
+        </property>
+
+            <task name="AddNetworkLibsToModule" module="${group}.${testname}"/>
+
+        <do if="${config-system}=='ps3'">
+                <fileset name="${group}.${testname}.libs" append="true">
+                <includes name="${package.ps3sdk.appdir}/target/ppu/lib/libsysutil_np_stub.a"/>
+            </fileset>
+        </do>
+
+        <property name="package.sln.startupproject" value="${testname}"/>
+
+            <fileset name="${group}.${testname}.filesystemsource" basedir="${package.dir}/tests/rwunittestdata">
+                <includes name="**"/>
+            </fileset>
+            <benchmarkenvironment.filesystem.add group="${group}" module="${testname}" builddir="${package.builddir}" fileset="${group}.${testname}.filesystemsource"/>
+    </foreach>
+    </foreach>
+
+  <!-- List of test executables run-->
+  <property name="test.run.modules" value="${test.buildmodules}"/>
+
+  <!-- build PS3 SPU test executables -->
+    <do if="${config-system} == ps3">
+
+        <!-- Create list of test-suites to compile as SPU tests. -->
+        <!-- This is currently a hard-coded subset of tests in the core subdirectory. -->
+        <property name="test.collision.spu_tests">
+            test-unitwalker
+            test-triangleiterator
+            test-genericunit
+            test-triangleunitwithedgecosines
+            test-cluster
+            test-volume
+        </property>
+        <!-- Add to list of modules to build -->
+        <property name="test.buildmodules" value="${property.value} ${test.collision.spu_tests}"/>
+
+        <!-- How to build each test: -->
+        <foreach property="sputest" item="String" in="${test.collision.spu_tests}">
+            <property name="test.${sputest}.buildtype" value="SPUProgram"/>
+            <!-- Inherit most properties from main test executable. -->
+            <property name="test.${sputest}.includedirs">
+                ${package.${package.name}.includedirs}
+                ${package.dir}/tests/shared
+            </property>
+            <property name="test.${sputest}.builddependencies">
+                ${rwcollision_volumes.subdependencies}
+                ${eaphysics_unitframework.dependencies}
+                benchmarkenvironment
+            </property>
+            <fileset name="test.${sputest}.headerfiles">
+                <includes name="core/*.hpp"/>
+                <includes name="${package.dir}/tests/shared/*.hpp"/>
+            </fileset>
+            <!-- Add source code for this unit test suite (assumed to be single source file). -->
+            <fileset name="test.${sputest}.sourcefiles">
+                <includes name="core/${sputest}.cpp"/>
+                <includes name="${package.dir}/source/core/aggregate/procedural/rwcclusteredmeshcluster.cpp"/>
+            </fileset>
+            <property name="test.${sputest}.runtime.moduledependencies" value="rwccore_spu"/>
+            <fileset name="test.${sputest}.libs">
+                <includes name="${package.PlayStation3GCC.appdir}\target\spu\lib\libdma.a" />
+                <includes name="${package.PlayStation3GCC.appdir}\target\spu\lib\libsync.a" />
+            </fileset>
+        </foreach>
+    </do>
+
+    <!-- Target to generate serialization data files -->
+    <target name="tool-run">
+        <foreach property="testdir" item="String" in="core linequery clusteredmeshbuilder">
+            <property name="testname" value="test-collision-${testdir}"/>
+            <exec program="${package.configbindir}/tool/${testname}${exe-suffix}"
+                  workingdir="${package.dir}/tests/rwunittestdata"/>
+        </foreach>
+    </target>
+    
+</project>

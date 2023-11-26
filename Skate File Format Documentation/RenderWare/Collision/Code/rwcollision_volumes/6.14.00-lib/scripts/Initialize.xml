@@ -1,0 +1,28 @@
+<project>
+
+    <property name="package.rwcollision_volumes.includedirs">
+        ${package.rwcollision_volumes.dir}/include
+    </property>
+
+    <do unless="@{PropertyExists('package.rwcollision_volumes.libdir')}">
+        <property name="package.rwcollision_volumes.libdir" value="${package.rwcollision_volumes.dir}/lib/${config}"/>
+    </do>
+
+    <fileset name="package.rwcollision_volumes.libs">
+        <includes name="${package.rwcollision_volumes.libdir}/*${lib-suffix}" />
+    </fileset>
+
+    <fileset name="package.rwcollision_volumes.libs.spu">
+        <includes name="${package.rwcollision_volumes.libdir}/${lib-prefix}rwccore_spu${lib-suffix}" />
+    </fileset>
+  
+    <dependent name="eaphysics_base" />
+    <property name="rwcollision_volumes.dependencies">
+        ${eaphysics_base.dependencies}
+        coreallocator
+        eacollision_primitives
+        eacollision_features
+        rwcollision_volumes
+    </property>
+
+</project>

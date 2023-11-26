@@ -1,0 +1,29 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} linetest"/>
+    <property name="example.linetest.buildtype" value="Program"/>
+
+    <property name="example.linetest.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.linetest.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.linetest.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/linetest/*.cpp" />
+    </fileset>
+
+    <fileset name="example.linetest.headerfiles">
+        <includes name="${package.dir}/examples/linetest/*.h" />
+    </fileset>
+
+</project>

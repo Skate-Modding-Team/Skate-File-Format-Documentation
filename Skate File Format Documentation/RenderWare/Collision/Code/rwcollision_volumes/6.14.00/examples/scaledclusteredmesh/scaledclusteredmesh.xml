@@ -1,0 +1,30 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} scaledclusteredmesh"/>
+    <property name="example.scaledclusteredmesh.buildtype" value="Program"/>
+
+    <property name="example.scaledclusteredmesh.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.scaledclusteredmesh.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.scaledclusteredmesh.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/scaledclusteredmesh/*.cpp" />
+    </fileset>
+
+    <fileset name="example.scaledclusteredmesh.headerfiles">
+        <includes name="${package.dir}/examples/scaledclusteredmesh/*.h" />
+        <includes name="${package.dir}/examples/common/*.h" />
+    </fileset>
+
+</project>

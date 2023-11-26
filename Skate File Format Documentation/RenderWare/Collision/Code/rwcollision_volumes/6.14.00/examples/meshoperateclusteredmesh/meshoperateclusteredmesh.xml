@@ -1,0 +1,37 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} meshoperateclusteredmesh"/>
+    <property name="example.meshoperateclusteredmesh.buildtype" value="Program"/>
+
+    <!-- NOTE: Users using MeshOperate 0.x/1.x packages will need to add a use-dependency on
+    meshoperate_meshutils, which is deprecated in MeshOperate 2.x -->
+    <property name="example.meshoperateclusteredmesh.usedependencies">
+      meshoperate_base
+      meshoperate_halfedgemesh
+    </property>
+
+    <property name="example.meshoperateclusteredmesh.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.meshoperateclusteredmesh.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.meshoperateclusteredmesh.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/meshoperateclusteredmesh/*.cpp" />
+    </fileset>
+
+    <fileset name="example.meshoperateclusteredmesh.headerfiles">
+        <includes name="${package.dir}/examples/meshoperateclusteredmesh/*.h" />
+    </fileset>
+
+</project>

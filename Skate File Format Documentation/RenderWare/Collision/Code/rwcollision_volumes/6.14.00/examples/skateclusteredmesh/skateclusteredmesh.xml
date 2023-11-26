@@ -1,0 +1,57 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} skateclusteredmesh"/>
+    <property name="example.skateclusteredmesh.buildtype" value="Program"/>
+
+    <!-- NOTE: Users using MeshOperate 0.x/1.x packages will need to add a use-dependency on
+    meshoperate_meshutils, which is deprecated in MeshOperate 2.x -->
+    <property name="example.skateclusteredmesh.usedependencies">
+      EABase
+      meshoperate_base
+      meshoperate_halfedgemesh
+      meshoperate_serialization
+      serialization
+      serialization_xml_archive
+      serialization_rwmath
+    </property>
+
+    <property name="example.skateclusteredmesh.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAAssert
+      EAIO
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+      rwmath
+      UTFXml
+    </property>
+
+    <property name="example.skateclusteredmesh.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.skateclusteredmesh.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/skateclusteredmesh/*.cpp" />
+    </fileset>
+
+    <fileset name="example.skateclusteredmesh.headerfiles">
+      <includes name="${package.dir}/examples/skateclusteredmesh/*.h" />
+    </fileset>
+
+    <do if="${config-system} == android">
+
+        <!-- For std::ios_base -->
+        <property name="example-android-libs" value="${package.AndroidNDK.libstdcdir}/libs/x86/libgnustl_static.a"     if="'${config-processor}'=='x86'"/>
+        <property name="example-android-libs" value="${package.AndroidNDK.libstdcdir}/libs/armeabi/libgnustl_static.a" if="'${config-processor}'=='arm'"/>
+
+        <fileset name="example.skateclusteredmesh.libs">
+            <includes name="${example-android-libs}" />
+        </fileset>
+
+    </do>
+
+</project>

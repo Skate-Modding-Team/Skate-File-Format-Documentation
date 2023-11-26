@@ -1,0 +1,9 @@
+<project default="build">
+
+    <!-- automatically maintain the current package version
+      -->
+    <property name="buildFileDirectory" value="@{PathGetFullPath('.')}"/>
+    <property name="packageVersion" value="@{PathGetFileName('${buildFileDirectory}')}"/>
+    <package  name="rwcollision_volumes" targetversion="${packageVersion}"/>
+
+</project>

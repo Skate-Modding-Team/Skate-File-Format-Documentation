@@ -1,0 +1,30 @@
+<project>
+
+  <property name="example.buildmodules" value="${property.value} trianglesoupsma"/>
+  <property name="example.trianglesoupsma.buildtype" value="Program"/>
+
+  <property name="example.trianglesoupsma.builddependencies">
+    ${rwcollision_volumes.subdependencies}
+    EAMain
+    EAStdC
+    EASTL
+    EAThread
+    PPMalloc
+  </property>
+
+  <property name="example.trianglesoupsma.runtime.moduledependencies">
+    rwcclusteredmeshbuilder
+    rwccore
+  </property>
+
+  <fileset name="example.trianglesoupsma.sourcefiles">
+    <includes name="${package.dir}/examples/common/*.cpp" />
+    <includes name="${package.dir}/examples/trianglesoupsma/*.cpp" />
+  </fileset>
+
+  <fileset name="example.trianglesoupsma.headerfiles">
+    <includes name="${package.dir}/examples/trianglesoupsma/*.h" />
+    <includes name="${package.dir}/examples/common/*.h" />
+  </fileset>
+
+</project>

@@ -1,0 +1,35 @@
+<project>
+
+  <property name="example.buildmodules" value="${property.value} edgecosine"/>
+  <property name="example.edgecosine.buildtype" value="Program"/>
+
+  <property name="example.edgecosine.usedependencies">
+    meshoperate_base
+    meshoperate_halfedgemesh
+  </property>
+
+  <property name="example.edgecosine.builddependencies">
+    ${rwcollision_volumes.subdependencies}
+    EAMain
+    EAStdC
+    EASTL
+    EAThread
+    PPMalloc
+  </property>
+
+  <property name="example.edgecosine.runtime.moduledependencies">
+    rwcclusteredmeshbuilder
+    rwccore
+  </property>
+
+  <fileset name="example.edgecosine.sourcefiles">
+    <includes name="${package.dir}/examples/common/*.cpp" />
+    <includes name="${package.dir}/examples/edgecosine/*.cpp" />
+  </fileset>
+
+  <fileset name="example.edgecosine.headerfiles">
+    <includes name="${package.dir}/examples/edgecosine/*.h" />
+    <includes name="${package.dir}/examples/common/*.h" />
+  </fileset>
+
+</project>

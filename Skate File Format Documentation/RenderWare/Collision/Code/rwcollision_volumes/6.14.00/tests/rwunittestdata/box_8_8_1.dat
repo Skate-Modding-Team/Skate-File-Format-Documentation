@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This archive was written by an archive from the serialization_xml_archive package. -->
+<xml_archive version="3" revision="2">
+  <object type="rw::math::vpu::Matrix44Affine" name="*transform">
+    <object type="rw::math::vpu::Vector3" name="x">
+      <array type="float">-0.9993566275	-1.532107774e-14	-0.03586381301</array>
+    </object>
+    <object type="rw::math::vpu::Vector3" name="y">
+      <array type="float">-1.567673102e-09	1	4.368328277e-08</array>
+    </object>
+    <object type="rw::math::vpu::Vector3" name="z">
+      <array type="float">0.03586381301	4.371140605e-08	-0.9993566275</array>
+    </object>
+    <object type="rw::math::vpu::Vector3" name="w">
+      <array type="float">-61.99253845	-0.04999685287	-31.34497833</array>
+    </object>
+  </object>
+  <object name="clusteredMeshPtr">
+    <object name="rwphysics HLSerializable objectDescriptor">
+      <uint32_t name="m_maxClusters">1</uint32_t>
+      <uint32_t name="m_clusterDataSize">3888</uint32_t>
+      <uint32_t name="m_numBranchNodes">49</uint32_t>
+      <uint32_t name="m_maxUnits">320</uint32_t>
+      <object name="m_bbox">
+        <object type="rw::math::vpu::Vector3" name="m_min">
+          <array type="float">-2.861022949e-06	-0.0001294612885	-6.000001431</array>
+        </object>
+        <object type="rw::math::vpu::Vector3" name="m_max">
+          <array type="float">5.999999046	0.7498973608	-1.907348633e-06</array>
+        </object>
+      </object>
+    </object>
+    <address id="1"/>
+    <object version="2" name="rwphysics HLSerializable object">
+      <object name="Procedural">
+        <object name="Aggregate">
+          <uint32_t name="m_numTagBits">9</uint32_t>
+          <uint32_t name="m_numVolumes">320</uint32_t>
+          <object name="m_AABB">
+            <object type="rw::math::vpu::Vector3" name="m_min">
+              <array type="float">-2.861022949e-06	-0.0001294612885	-6.000001431</array>
+            </object>
+            <object type="rw::math::vpu::Vector3" name="m_max">
+              <array type="float">5.999999046	0.7498973608	-1.907348633e-06</array>
+            </object>
+          </object>
+        </object>
+      </object>
+      <uint32_t name="mNumClusters">1</uint32_t>
+      <uint32_t name="mMaxClusters">1</uint32_t>
+      <uint32_t name="mNumUnits">320</uint32_t>
+      <uint32_t name="mMaxUnits">320</uint32_t>
+      <float name="mClusterParams.mVertexCompressionGranularity">0.001000000047</float>
+      <uint32_t name="mSizeOfThis">5616</uint32_t>
+      <uint16_t name="mClusterParams.mFlags">16</uint16_t>
+      <uint16_t name="mDefaultGroupId">0</uint16_t>
+      <uint16_t name="mDefaultSurfaceId">0</uint16_t>
+      <uint8_t name="mDefaultEdgeAngle">128</uint8_t>
+      <uint8_t name="mClusterParams.mGroupIdSize">2</uint8_t>
+      <uint8_t name="mClusterParams.mSurfaceIdSize">2</uint8_t>
+      <object name="*mKDTree">
+        <uint32_t name="m_numBranchNodes">49</uint32_t>
+        <uint32_t name="m_numEntries">320</uint32_t>
+        <array name="m_branchNodes">
+          <object>
+            <uint32_t name="m_parent">0</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">1</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">25</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">3.000119209	3.000116348</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">0</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">2</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">14</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-3.000119925	-3.000121832</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">1</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">3</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">9</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">1.500179291	1.500178099</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">2</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">4</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">7</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-4.500060081	-4.500061989</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">3</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">5</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">6</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">0.7502097487	0.7502083778</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">4</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">0</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">72</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250030518	-5.250031471</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">4</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">126</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">180</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250030518	-5.250031471</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">3</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">8</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">324</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">0.7502097487	0.750208497</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">7</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">216</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">270</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-3.750090361	-3.75009203</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">2</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">10</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">13</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-4.500059605	-4.500061035</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">9</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">11</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">12</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">2.25014925	2.250147343</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">10</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">396</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">450</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250029564	-5.250030518</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">10</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">486</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">540</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250029564	-5.250030518</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">9</uint32_t>
+            <uint32_t name="m_axis">1</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">576</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">648</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-8.588624769e-05	0.7498684525</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">1</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">15</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">21</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">1.500178814	1.500176907</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">14</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">16</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">18</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-1.500181079	-1.500182033</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">15</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">17</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">828</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">0.7502092123	0.7502076626</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">16</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">720</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">774</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-2.250150681	-2.250151634</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">15</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">19</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">20</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">0.7502087951	0.7502068281</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">18</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">900</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">954</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-0.7502108216	-0.7502114177</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">18</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">1026</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">1062</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-0.7502107024	-0.7502111197</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">14</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">22</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">23</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-1.500180602	-1.500181556</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">21</uint32_t>
+            <uint32_t name="m_axis">1</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">1116</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">1188</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-8.293750579e-05	0.7498688102</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">21</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">1260</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">24</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-0.7502102852	-0.75021106</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">23</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">1332</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">1386</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">2.250147343	2.250146389</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">0</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">26</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">38</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-3.000119448	-3.000121832</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">25</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">27</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">32</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">4.500059605	4.50005579</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">26</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">28</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">31</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-4.500059128	-4.500060081</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">27</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">29</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">30</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">3.750089645	3.750086308</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">28</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">1440</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">1494</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250029564	-5.250030518</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">28</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">1530</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">1584</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250029564	-5.250029564</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">27</uint32_t>
+            <uint32_t name="m_axis">1</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">1620</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">1692</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-7.126626588e-05	0.7498797178</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">26</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">33</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">36</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-4.500059128	-4.500061512</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">32</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">34</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">35</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">5.250030518	5.250024796</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">33</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">1764</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">1818</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250029564	-5.250029564</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">33</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">1854</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">1926</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-5.250029564	-5.250031471</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">32</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">1980</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">37</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">5.25002861	5.250024796</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">36</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2052</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2106</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-3.750089169	-3.750091791</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">25</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">39</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">43</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">4.50005722	4.50005579</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">38</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">40</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">41</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-1.500180125	-1.500181079</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">39</uint32_t>
+            <uint32_t name="m_axis">1</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">2160</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">2232</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-6.689540169e-05	0.7498804331</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">39</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">2304</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">42</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-0.7502097487	-0.7502106428</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">41</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2376</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2430</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">3.750086308	3.750085831</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">38</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">44</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">46</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-1.500180125	-1.500182271</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">43</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">2484</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">45</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">5.250027657	5.250024796</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">44</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2556</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2610</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-2.250149727	-2.250151634</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">43</uint32_t>
+            <uint32_t name="m_axis">0</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">47</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">4294967295</uint32_t>
+                <uint32_t name="m_index">48</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">5.25002718	5.250024796</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">46</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">4</uint32_t>
+                <uint32_t name="m_index">2664</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2700</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-0.7502097487	-0.7502100468</array>
+          </object>
+          <object>
+            <uint32_t name="m_parent">46</uint32_t>
+            <uint32_t name="m_axis">2</uint32_t>
+            <array name="m_childRefs">
+              <object>
+                <uint32_t name="m_content">6</uint32_t>
+                <uint32_t name="m_index">2754</uint32_t>
+              </object>
+              <object>
+                <uint32_t name="m_content">8</uint32_t>
+                <uint32_t name="m_index">2808</uint32_t>
+              </object>
+            </array>
+            <array name="m_extents" type="float">-0.7502097487	-0.7502117753</array>
+          </object>
+        </array>
+        <object name="m_bbox">
+          <object type="rw::math::vpu::Vector3" name="m_min">
+            <array type="float">-2.861022949e-06	-0.0001294612885	-6.000001431</array>
+          </object>
+          <object type="rw::math::vpu::Vector3" name="m_max">
+            <array type="float">5.999999046	0.7498973608	-1.907348633e-06</array>
+          </object>
+        </object>
+      </object>
+      <array name="mCluster" type="uint32_t">1728</array>
+      <uint16_t name="cluster.unitCount">320</uint16_t>
+      <uint16_t name="cluster.unitDataSize">2880</uint16_t>
+      <uint16_t name="cluster.unitDataStart">62</uint16_t>
+      <uint16_t name="cluster.normalStart">62</uint16_t>
+      <uint16_t name="cluster.totalSize">3888</uint16_t>
+      <uint8_t name="cluster.compressionMode">1</uint8_t>
+      <uint8_t name="cluster.vertexCount">162</uint8_t>
+      <uint8_t name="cluster.normalCount">0</uint8_t>
+      <array name="vertexArrayHeader" type="uint32_t">4294967295	4294967295	4294961295</array>
+      <array name="vertexArray" type="uint16_t">
+1	750	1501	1	750	6001	1	1	1501	1
+1	751	1	1	1	1	1	6001	1	750
+2	1	750	751	1	1	3001	5251	1	751
+5251	1	1501	5251	1	6001	5251	1	1	5251
+1	2251	5251	1	5251	5251	1	4501	5251	1
+3001	5251	1	3751	5251	750	1	5251	750	5251
+5251	750	6001	5251	750	4501	5251	750	3001	5251
+750	3751	5251	750	2251	5251	750	1501	5251	750
+751	2251	750	6001	1	1	2251	1	750	2251
+3751	750	6001	2251	750	5251	2251	750	4501	3751
+1	5251	3751	1	4501	3751	1	3751	3751	1
+751	3751	750	5251	3751	1	1	3751	1	6001
+2251	1	5251	2251	1	6001	2251	1	751	2251
+1	1	3751	1	3001	3751	1	2251	2251	1
+4501	2251	750	3751	3751	1	1501	3751	750	4501
+2251	1	3751	2251	750	3001	2251	750	1	3751
+750	3751	2251	1	3001	3751	750	1	2251	1
+2251	2251	1	1501	2251	750	2251	3751	750	3001
+3751	750	2251	2251	750	1501	3751	750	1501	2251
+750	751	1	750	5251	4501	1	6001	4501	1
+751	4501	1	1501	4501	1	1	4501	1	2251
+4501	1	5251	4501	1	4501	4501	750	6001	4501
+1	3001	4501	1	3751	4501	750	4501	4501	750
+5251	4501	750	3751	4501	750	1	1	1	4501
+4501	750	2251	4501	750	3001	3751	750	751	4501
+750	1501	4501	750	751	1	1	5251	751	750
+6001	751	750	5251	1	750	4501	751	750	4501
+1	750	3751	751	750	3751	751	1	6001	751
+1	1	751	1	751	751	750	3001	751	750
+2	751	1	5251	751	1	4501	751	750	2251
+751	1	3751	751	750	751	751	1	3001	1
+750	3001	751	750	1501	751	1	2251	751	1
+1501	1501	750	6001	1	1	3751	1501	750	5251
+1501	750	4501	1501	750	3751	1501	1	751	1501
+1	6001	1501	1	1	1501	1	5251	1501	750
+3001	1501	1	4501	1501	750	2	1501	1	3751
+1501	750	2251	1501	1	3001	1501	1	2251	1501
+750	1501	1501	1	1501	1501	750	751	3001	750
+6001	3001	750	5251	3001	750	4501	3001	1	1
+3001	1	6001	3001	1	5251	3001	1	751	3001
+1	4501	3001	750	3751	3001	1	3751	3001	1
+3001	3001	1	2251	3001	750	1	3001	750	3001
+3001	1	1501	3001	750	2251	3001	750	1501	3001
+750	751	6000	1	6001	6000	1	751	6000	1
+1501	6000	750	751	6000	1	5251	6000	1	2251
+6000	1	3001	6000	1	4501	6000	1	3751	6000
+1	1	6000	750	1	6000	750	2251	6000	750
+1501	6000	750	3001	6000	750	3751	6000	750	4501
+6000	750	6001	6000	750	5251
+</array>
+      <array name="normalArray"/>
+      <array name="unitData" type="uint8_t">
+161	7	101	6	90	90	34	169	176	161
+96	6	101	98	26	90	169	176	161	4
+93	3	33	90	98	169	176	161	4	6
+93	34	26	97	169	176	161	7	6	3
+98	26	90	169	176	161	94	3	93	90
+90	90	169	176	161	96	93	6	90	90
+34	169	176	161	4	3	6	34	90	34
+169	176	161	101	7	104	90	90	90	169
+176	161	3	2	7	98	90	90	169	176
+161	0	104	7	90	90	98	169	176	161
+3	94	2	90	90	98	169	176	161	106
+2	94	90	90	90	169	176	161	0	7
+2	98	90	90	169	176	161	118	114	96
+122	90	98	169	176	161	118	96	125	98
+90	90	169	176	161	112	94	114	90	90
+90	169	176	161	93	96	114	90	90	97
+169	176	161	93	114	94	97	90	90	169
+176	161	101	125	96	90	90	90	169	176
+161	101	104	125	90	90	90	169	176	161
+94	112	106	90	90	90	169	176	161	124
+106	112	90	90	90	169	176	161	123	125
+104	90	90	90	169	176	161	104	0	99
+90	90	90	169	176	161	29	99	0	90
+90	98	169	176	161	105	28	106	90	90
+90	169	176	161	29	0	28	98	90	90
+169	176	161	2	106	28	90	90	98	169
+176	161	2	28	0	98	90	90	169	176
+161	103	95	29	90	90	98	169	176	161
+102	8	105	90	90	90	169	176	161	28
+105	8	90	90	98	169	176	161	99	29
+95	90	90	90	169	176	161	103	29	8
+98	90	90	169	176	161	28	8	29	98
+90	90	169	176	161	120	99	116	90	90
+90	169	176	161	121	102	122	90	90	90
+169	176	161	105	122	102	90	90	90	169
+176	161	95	116	99	90	90	90	169	176
+161	99	120	104	90	90	90	169	176	161
+106	124	105	90	90	90	169	176	161	122
+105	124	90	90	90	169	176	161	123	104
+120	90	90	90	169	176	161	52	43	118
+118	85	98	169	176	161	114	118	43	122
+85	97	169	176	161	52	118	63	98	90
+90	169	176	161	114	43	112	97	90	90
+169	176	161	42	112	43	90	90	90	169
+176	161	125	63	118	90	90	90	169	176
+161	125	123	63	90	90	90	169	176	161
+57	124	42	90	90	90	169	176	161	112
+42	124	90	90	90	169	176	161	61	63
+123	90	90	90	169	176	161	43	129	42
+98	90	90	169	176	161	43	52	129	118
+90	98	169	176	161	138	129	52	90	90
+98	169	176	161	132	42	129	90	90	90
+169	176	161	138	52	143	98	90	90	169
+176	161	63	143	52	90	90	90	169	176
+161	142	143	61	90	90	90	169	176	161
+140	57	132	90	90	90	169	176	161	42
+132	57	90	90	90	169	176	161	63	61
+143	90	90	90	169	176	161	136	54	137
+90	90	90	169	176	161	56	137	54	90
+90	90	169	176	161	124	57	122	90	90
+90	169	176	161	56	122	57	90	90	90
+169	176	161	122	56	121	90	90	90	169
+176	161	57	140	56	90	90	90	169	176
+161	54	121	56	90	90	90	169	176	161
+137	56	140	90	90	90	169	176	161	141
+58	139	90	90	90	169	176	161	51	139
+58	90	90	90	169	176	161	58	141	61
+90	90	90	169	176	161	142	61	141	90
+90	90	169	176	161	58	120	51	90	90
+90	169	176	161	116	51	120	90	90	90
+169	176	161	120	58	123	90	90	90	169
+176	161	61	123	58	90	90	90	169	176
+161	90	91	103	90	90	98	169	176	161
+95	103	91	90	90	90	169	176	161	8
+102	108	90	90	98	169	176	161	108	90
+8	90	90	98	169	176	161	100	108	102
+90	90	90	169	176	161	103	8	90	90
+90	98	169	176	161	88	89	90	90	89
+98	169	176	161	79	88	108	90	90	98
+169	176	161	91	90	89	90	89	89	169
+176	161	98	79	100	90	89	89	169	176
+161	90	108	88	90	90	98	169	176	161
+108	100	79	90	89	98	169	176	161	117
+98	119	90	89	90	169	176	161	89	110
+91	90	89	89	169	176	161	100	119	98
+90	89	89	169	176	161	102	121	100	90
+90	90	169	176	161	111	91	110	90	89
+90	169	176	161	116	95	111	90	90	90
+169	176	161	91	111	95	90	90	90	169
+176	161	119	100	121	90	90	90	169	176
+161	97	85	98	26	90	90	169	176	161
+85	64	79	90	90	98	169	176	161	64
+87	88	90	90	98	169	176	161	89	88
+87	90	90	90	169	176	161	79	98	85
+90	90	98	169	176	161	88	79	64	90
+90	98	169	176	161	1	86	64	34	90
+98	169	176	161	92	86	5	90	90	34
+169	176	161	85	97	5	90	26	34	169
+176	161	1	5	86	34	26	98	169	176
+161	5	1	85	34	26	98	169	176	161
+87	64	86	90	90	90	169	176	161	92
+5	97	98	26	26	169	176	161	64	85
+1	90	90	34	169	176	161	115	97	117
+90	26	90	169	176	161	98	117	97	90
+90	26	169	176	161	87	109	89	90	90
+90	169	176	161	110	89	109	90	90	90
+169	176	161	109	87	107	90	90	90	169
+176	161	86	92	107	90	90	98	169	176
+161	113	107	92	90	90	98	169	176	161
+97	115	92	26	90	90	169	176	161	113
+92	115	98	90	90	169	176	161	86	107
+87	98	90	90	169	176	161	50	135	46
+90	90	90	169	176	161	133	46	135	90
+90	90	169	176	161	121	54	119	90	90
+90	169	176	161	46	117	50	90	90	90
+169	176	161	54	136	50	90	90	90	169
+176	161	50	119	54	90	90	90	169	176
+161	119	50	117	90	90	90	169	176	161
+135	50	136	90	90	90	169	176	161	32
+128	47	90	90	90	169	176	161	47	111
+32	90	90	90	169	176	161	110	32	111
+90	90	90	169	176	161	134	47	128	90
+90	90	169	176	161	51	116	47	90	90
+90	169	176	161	139	51	134	90	90	90
+169	176	161	47	134	51	90	90	90	169
+176	161	111	47	116	90	90	90	169	176
+161	32	110	31	90	89	90	169	176	161
+40	115	46	89	89	90	169	176	161	109
+31	110	89	89	90	169	176	161	128	32
+127	90	90	90	169	176	161	31	127	32
+90	90	90	169	176	161	131	40	133	90
+90	90	169	176	161	46	133	40	90	90
+90	169	176	161	117	46	115	90	89	90
+169	176	161	31	109	27	89	89	90	169
+176	161	107	27	109	98	89	90	169	176
+161	41	113	40	98	89	90	169	176	161
+41	27	113	90	90	98	169	176	161	115
+40	113	89	89	90	169	176	161	107	113
+27	90	90	98	169	176	161	40	131	41
+90	90	90	169	176	161	130	126	41	90
+90	98	169	176	161	130	41	131	98	90
+90	169	176	161	27	41	126	90	90	98
+169	176	161	27	126	31	98	90	90	169
+176	161	127	31	126	90	90	90	169	176
+161	36	132	38	90	90	90	169	176	161
+129	138	38	90	90	98	169	176	161	55
+38	138	90	90	98	169	176	161	143	82
+138	90	90	90	169	176	161	129	38	132
+98	90	90	169	176	161	55	138	82	98
+90	90	169	176	161	82	143	62	90	90
+90	169	176	161	48	140	36	90	90	90
+169	176	161	132	36	140	90	90	90	169
+176	161	142	62	143	90	90	90	169	176
+161	78	68	55	90	90	98	169	176	161
+38	68	36	98	90	90	169	176	161	82
+84	55	90	90	90	169	176	161	38	55
+68	90	90	98	169	176	161	78	55	84
+98	90	90	169	176	161	66	36	68	90
+90	90	169	176	161	67	48	66	90	90
+90	169	176	161	62	83	82	90	90	90
+169	176	161	36	66	48	90	90	90	169
+176	161	84	82	83	90	90	90	169	176
+161	48	67	45	90	90	90	169	176	161
+44	136	45	90	90	90	169	176	161	140
+48	137	90	90	90	169	176	161	45	137
+48	90	90	90	169	176	161	45	69	44
+90	90	90	169	176	161	73	44	69	90
+90	90	169	176	161	137	45	136	90	90
+90	169	176	161	69	45	67	90	90	90
+169	176	161	60	141	59	90	90	90	169
+176	161	80	60	81	90	90	90	169	176
+161	139	59	141	90	90	90	169	176	161
+59	81	60	90	90	90	169	176	161	62
+142	60	90	90	90	169	176	161	60	80
+62	90	90	90	169	176	161	83	62	80
+90	90	90	169	176	161	141	60	142	90
+90	90	169	176	161	68	12	66	98	90
+90	169	176	161	84	26	78	90	90	90
+169	176	161	12	68	18	98	90	90	169
+176	161	9	66	12	90	90	90	169	176
+161	18	78	26	98	90	90	169	176	161
+78	18	68	98	90	90	169	176	161	66
+9	67	90	90	90	169	176	161	83	25
+84	90	90	90	169	176	161	10	67	9
+90	90	90	169	176	161	26	84	25	90
+90	90	169	176	161	153	145	12	34	90
+98	169	176	161	12	18	153	90	90	34
+169	176	161	153	154	145	34	26	98	169
+176	161	154	153	18	34	26	98	169	176
+161	9	12	145	90	90	90	169	176	161
+147	154	26	98	26	90	169	176	161	18
+26	154	90	90	34	169	176	161	147	145
+154	90	90	34	169	176	161	147	156	145
+98	90	90	169	176	161	156	147	25	98
+90	90	169	176	161	146	145	156	98	90
+90	169	176	161	145	146	9	98	90	90
+169	176	161	10	9	146	90	90	90	169
+176	161	26	25	147	90	90	90	169	176
+161	67	10	69	90	90	90	169	176	161
+13	69	10	90	90	90	169	176	161	80
+24	83	90	90	90	169	176	161	25	83
+24	90	90	90	169	176	161	16	73	13
+90	90	90	169	176	161	81	22	80	90
+90	90	169	176	161	69	13	73	90	90
+90	169	176	161	24	80	22	90	90	90
+169	176	161	149	13	146	90	90	98	169
+176	161	10	146	13	90	90	90	169	176
+161	155	156	24	98	90	90	169	176	161
+25	24	156	90	90	90	169	176	161	155
+149	156	90	90	98	169	176	161	146	156
+149	90	90	98	169	176	161	157	155	22
+98	90	90	169	176	161	155	157	149	98
+90	90	169	176	161	24	22	155	90	90
+90	169	176	161	16	13	150	90	90	90
+169	176	161	149	150	13	98	90	90	169
+176	161	150	149	157	98	90	90	169	176
+161	44	73	35	90	90	90	169	176	161
+74	35	73	90	90	90	169	176	161	34
+133	35	90	90	90	169	176	161	71	34
+74	90	90	90	169	176	161	35	74	34
+90	90	90	169	176	161	135	35	133	90
+90	90	169	176	161	136	44	135	90	90
+90	169	176	161	35	135	44	90	90	90
+169	176	161	49	75	53	90	90	90	169
+176	161	53	134	49	90	90	90	169	176
+161	77	53	75	90	90	90	169	176	161
+81	59	77	90	90	90	169	176	161	128
+49	134	90	90	90	169	176	161	53	77
+59	90	90	90	169	176	161	59	139	53
+90	90	90	169	176	161	134	53	139	90
+90	90	169	176	161	33	131	34	90	90
+90	169	176	161	49	128	37	90	90	90
+169	176	161	127	37	128	90	90	90	169
+176	161	133	34	131	90	90	90	169	176
+161	75	49	76	90	90	90	169	176	161
+37	76	49	90	90	90	169	176	161	34
+71	33	90	90	90	169	176	161	70	33
+71	90	90	90	169	176	161	131	33	130
+90	90	90	169	176	161	37	127	30	90
+90	90	169	176	161	39	30	130	90	90
+98	169	176	161	126	130	30	90	90	98
+169	176	161	126	30	127	98	90	90	169
+176	161	39	130	33	98	90	90	169	176
+161	33	70	39	90	90	90	169	176	161
+72	30	65	98	90	90	169	176	161	65
+39	70	98	90	90	169	176	161	39	65
+30	98	90	90	169	176	161	76	37	72
+90	90	90	169	176	161	30	72	37	98
+90	90	169	176	161	23	77	21	90	90
+90	169	176	161	75	21	77	90	90	90
+169	176	161	74	17	71	90	90	90	169
+176	161	22	81	23	90	90	90	169	176
+161	17	74	16	90	90	90	169	176	161
+73	16	74	90	90	90	169	176	161	77
+23	81	90	90	90	169	176	161	15	71
+17	90	90	90	169	176	161	150	152	16
+98	90	90	169	176	161	157	22	158	90
+90	98	169	176	161	17	16	152	90	90
+90	169	176	161	23	158	22	90	90	90
+169	176	161	157	158	150	98	90	90	169
+176	161	152	150	158	98	90	90	169	176
+161	151	152	159	98	90	90	169	176	161
+15	17	151	90	90	90	169	176	161	158
+23	159	90	90	98	169	176	161	21	159
+23	90	90	90	169	176	161	152	151	17
+98	90	90	169	176	161	158	159	152	98
+90	90	169	176	161	14	70	15	90	90
+90	169	176	161	76	19	75	90	90	90
+169	176	161	21	75	19	90	90	90	169
+176	161	71	15	70	90	90	90	169	176
+161	19	76	20	90	90	90	169	176	161
+72	65	20	90	90	98	169	176	161	11
+20	65	90	90	98	169	176	161	70	14
+65	90	90	90	169	176	161	11	65	14
+98	90	90	169	176	161	72	20	76	98
+90	90	169	176	161	14	15	148	90	90
+90	169	176	161	19	161	21	90	90	90
+169	176	161	159	21	161	90	90	98	169
+176	161	148	151	161	98	90	90	169	176
+161	151	148	15	98	90	90	169	176	161
+159	161	151	98	90	90	169	176	161	160
+20	144	34	90	34	169	176	161	144	148
+160	34	90	34	169	176	161	20	160	19
+98	26	90	169	176	161	148	144	14	98
+26	90	169	176	161	161	19	160	90	90
+34	169	176	161	11	144	20	98	26	90
+169	176	161	11	14	144	90	90	34	169
+176	161	161	160	148	98	26	90	169	176
+</array>
+    </object>
+  </object>
+</xml_archive>
+<!-- End of archive. -->

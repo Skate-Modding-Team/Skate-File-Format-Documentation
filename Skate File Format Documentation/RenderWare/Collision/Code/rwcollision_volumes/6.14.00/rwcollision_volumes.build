@@ -1,0 +1,36 @@
+<project default="build">
+
+    <optionset name="config.targetoverrides">
+        <option name="package" value="exclude"/>
+        <option name="test-run" value="include"/>
+    </optionset>
+    <optionset name="benchmarkenvironment.targets">
+        <option name="package" value="include"/>
+        <option name="post" value="include"/>
+    </optionset>
+    <package name="rwcollision_volumes" targetversion="6.14.00" initializeself="true"/>
+
+    <!-- The packages we depend on directly and indirectly -->
+    <property name="rwcollision_volumes.subdependencies" 
+              value="@{StrReplace(${rwcollision_volumes.dependencies},'rwcollision_volumes','')}" />  
+
+    <!-- Include the main rwcollision_volumes build file. If more then one file, order of includes defines the build order  -->
+    <include file="source/rwcollision_volumes.xml"/>
+
+    <!-- Documentation build -->
+    <include file="source/doc-lib/doc.build" if="@{FileExists('source/doc-lib/doc.build')}"/>
+
+    <!-- Example build file-->
+    <include file="examples/examples.xml"/>
+
+    <!-- Include the testing build file  -->
+    <choose>
+        <do if="@{IsPackageInMasterconfig('benchmarkenvironment')} and @{IsPackageInMasterconfig('eaphysics_unitframework')}">
+            <include file="tests/tests.xml"/>
+        </do>
+        <do>
+            <property name="package.test.error.message" value ="ERROR: Test build requires benchmarkenvironment and eaphysics_unitframework to be listed in your masterconfig file."/>
+        </do>
+    </choose>
+
+</project>

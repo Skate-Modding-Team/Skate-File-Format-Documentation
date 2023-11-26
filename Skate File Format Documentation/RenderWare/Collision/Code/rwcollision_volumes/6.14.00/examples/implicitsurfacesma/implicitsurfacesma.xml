@@ -1,0 +1,30 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} implicitsurfacesma"/>
+    <property name="example.implicitsurfacesma.buildtype" value="Program"/>
+
+    <property name="example.implicitsurfacesma.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.implicitsurfacesma.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.implicitsurfacesma.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/implicitsurfacesma/*.cpp" />
+    </fileset>
+
+    <fileset name="example.implicitsurfacesma.headerfiles">
+      <includes name="${package.dir}/examples/implicitsurfacesma/*.h" />
+      <includes name="${package.dir}/examples/common/*.h" />
+    </fileset>
+
+</project>

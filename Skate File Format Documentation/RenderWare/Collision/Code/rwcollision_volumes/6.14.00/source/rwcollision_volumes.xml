@@ -1,0 +1,86 @@
+<project>
+
+    <!-- instantiating rwmath/1.09.00's Min() and Max() etc produce remark 341 a lot with SNC -->
+    <property name="runtime.rwccore.warningsuppression.ps3" value="--diag_suppress=341" if="sn == ${config-compiler}"/>
+
+    <!--
+        rwccore module
+    -->
+    <property name="runtime.buildmodules" value="${property.value} rwccore"/>
+    <property name="runtime.rwccore.buildtype" value="Library"/>
+    <property name="runtime.rwccore.outputname" value="rwccore"/>
+
+    <property name="runtime.rwccore.usedependencies">
+        ${rwcollision_volumes.subdependencies}
+    </property>
+
+    <property name="runtime.rwccore.includedirs">
+        ${package.dir}/include
+    </property>
+
+    <fileset name="runtime.rwccore.headerfiles">
+        <includes name="${package.dir}/include/rw/**.h" />
+        <includes name="${package.dir}/source/bittable/**.h" />
+        <includes name="${package.dir}/source/core/**.h" />
+        <excludes name="${package.dir}/include/rw/collision/clusteredmeshruntimebuilder.h" />
+        <excludes name="${package.dir}/include/rw/collision/clusteredmeshofflinebuilder.h" />
+        <excludes name="${package.dir}/include/rw/collision/detail/clusteredmeshbuilder/**.h" />
+    </fileset>
+
+    <fileset name="runtime.rwccore.sourcefiles">
+        <includes name="${package.dir}/source/bittable/*.cpp" />
+        <includes name="${package.dir}/source/core/**.cpp" />
+    </fileset>
+
+    <fileset name="runtime.rwccore.bulkbuild.sourcefiles" fromfileset="runtime.rwccore.sourcefiles"/>
+
+    <!-- The rwccore_spu library is not included in this version because all of the useful contents
+         are now deprecated. If this is a problem, it can be added back. -->
+
+    <do if="ps3 == ${config-system}">
+        <!-- SPU Library -->
+        <property name="runtime.buildmodules" value="${property.value} rwccore_spu"/>
+        <property name="runtime.rwccore_spu.buildtype" value="SPULibrary"/>
+        <property name="runtime.rwccore_spu.usedependencies">
+            ${rwcollision_volumes.subdependencies}
+        </property>
+        <property name="runtime.rwccore_spu.builddependencies">
+        </property>
+        <property name="runtime.rwccorespu.includedirs">
+            ${package.dir}\include
+            ${package.dir}\source
+        </property>
+        <fileset name="runtime.rwccore_spu.sourcefiles">
+            <includes name="${package.dir}/source/core/volume/rwcvolume.cpp"/>
+        </fileset>
+    </do>
+
+    <!--
+        rwcclusteredmeshbuilder module
+    -->
+    <property name="runtime.buildmodules" value="${property.value} rwcclusteredmeshbuilder"/>
+    <property name="runtime.rwcclusteredmeshbuilder.buildtype" value="Library"/>
+    <property name="runtime.rwcclusteredmeshbuilder.outputname" value="rwcclusteredmeshbuilder"/>
+
+    <property name="runtime.rwcclusteredmeshbuilder.usedependencies">
+      ${rwcollision_volumes.subdependencies}
+      EASTL
+    </property>
+
+    <property name="runtime.rwcclusteredmeshbuilder.includedirs">
+      ${package.dir}/include
+    </property>
+
+    <fileset name="runtime.rwcclusteredmeshbuilder.headerfiles">
+      <includes name="${package.dir}/include/rw/collision/clusteredmeshruntimebuilder.h" />
+      <includes name="${package.dir}/include/rw/collision/clusteredmeshofflinebuilder.h" />
+      <includes name="${package.dir}/include/rw/collision/detail/clusteredmeshbuilder/**.h" />
+    </fileset>
+
+    <fileset name="runtime.rwcclusteredmeshbuilder.sourcefiles">
+      <includes name="${package.dir}/source/clusteredmeshbuilder/*.cpp" />
+    </fileset>
+
+    <fileset name="runtime.rwcclusteredmeshbuilder.bulkbuild.sourcefiles" fromfileset="runtime.rwcclusteredmeshbuilder.sourcefiles"/>
+
+</project>

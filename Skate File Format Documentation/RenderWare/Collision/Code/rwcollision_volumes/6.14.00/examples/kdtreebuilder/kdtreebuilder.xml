@@ -1,0 +1,28 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} kdtreebuilder"/>
+    <property name="example.kdtreebuilder.buildtype" value="Program"/>
+
+    <property name="example.kdtreebuilder.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.kdtreebuilder.runtime.moduledependencies">
+      rwccore
+    </property>
+
+    <fileset name="example.kdtreebuilder.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/kdtreebuilder/*.cpp" />
+    </fileset>
+
+    <fileset name="example.kdtreebuilder.headerfiles">
+      <includes name="${package.dir}/examples/kdtreebuilder/*.h" />
+    </fileset>
+
+</project>

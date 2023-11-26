@@ -1,0 +1,14 @@
+<package>
+    <contactName>EA</contactName>
+    <summary>rwcollision_volumes</summary>
+
+    <description>
+        rwcollision_volumes built and packaged with headers and libs only.
+    </description>
+
+    <license>EA Proprietary (External Use Allowed)</license>
+    <licenseComment>This is a binary distribution of the original rwcollision_volumes source package.  See the license in the original source package for details.</licenseComment>
+
+    <frameworkVersion>2</frameworkVersion>
+    <buildable>false</buildable>
+</package>

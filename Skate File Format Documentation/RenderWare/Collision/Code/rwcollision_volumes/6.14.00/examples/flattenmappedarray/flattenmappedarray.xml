@@ -1,0 +1,30 @@
+<project>
+
+  <property name="example.buildmodules" value="${property.value} flattenmappedarray"/>
+  <property name="example.flattenmappedarray.buildtype" value="Program"/>
+
+  <property name="example.flattenmappedarray.builddependencies">
+    ${rwcollision_volumes.subdependencies}
+    EAMain
+    EAStdC
+    EASTL
+    EAThread
+    PPMalloc
+  </property>
+
+  <property name="example.flattenmappedarray.runtime.moduledependencies">
+    rwcclusteredmeshbuilder
+    rwccore
+  </property>
+
+  <fileset name="example.flattenmappedarray.sourcefiles">
+    <includes name="${package.dir}/examples/common/*.cpp" />
+    <includes name="${package.dir}/examples/flattenmappedarray/*.cpp" />
+  </fileset>
+
+  <fileset name="example.flattenmappedarray.headerfiles">
+    <includes name="${package.dir}/examples/flattenmappedarray/*.h" />
+    <includes name="${package.dir}/examples/common/*.h" />
+  </fileset>
+
+</project>

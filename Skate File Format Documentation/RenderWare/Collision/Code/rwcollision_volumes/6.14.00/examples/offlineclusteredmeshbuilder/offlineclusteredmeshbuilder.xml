@@ -1,0 +1,29 @@
+<project>
+
+    <property name="example.buildmodules" value="${property.value} offlineclusteredmeshbuilder"/>
+    <property name="example.offlineclusteredmeshbuilder.buildtype" value="Program"/>
+
+    <property name="example.offlineclusteredmeshbuilder.builddependencies">
+      ${rwcollision_volumes.subdependencies}
+      EAMain
+      EAStdC
+      EASTL
+      EAThread
+      PPMalloc
+    </property>
+
+    <property name="example.offlineclusteredmeshbuilder.runtime.moduledependencies">
+      rwcclusteredmeshbuilder
+      rwccore
+    </property>
+
+    <fileset name="example.offlineclusteredmeshbuilder.sourcefiles">
+      <includes name="${package.dir}/examples/common/*.cpp" />
+      <includes name="${package.dir}/examples/offlineclusteredmeshbuilder/*.cpp" />
+    </fileset>
+
+    <fileset name="example.offlineclusteredmeshbuilder.headerfiles">
+      <includes name="${package.dir}/examples/offlineclusteredmeshbuilder/*.h" />
+    </fileset>
+
+</project>

@@ -1,0 +1,108 @@
+<project>
+    <masterversions>
+        <package  name="ActivePython"     version="2.7.2.5"    />                                   
+        <package  name="android_config"   version="1.04.02"    />                                   
+        <package  name="AndroidEmulator"  version="1.18.00"    />                                   
+        <package  name="AndroidNDK"       version="r9"         />                                   
+        <package  name="eaconfig"         version="2.14.00"    /> <!--   trailing edge: 2.04.02 --> 
+        <package  name="jdk"              version="1.6.0_23-1" />                                   
+        <package  name="vstomaketools"    version="2.05.17"    /> <!--   trailing edge: 2.05.06 --> 
+        <grouptype name="build">
+            <package  name="AndroidSDK"    version="18"           /> <!--   trailing edge: 9-ndk-r6b-2      --> 
+            <package  name="DirectX"       version="9.0c.2010.06" />                                            
+            <package  name="DotNet"        version="4.0-2"        /> <!--   trailing edge: 4.0-1            --> 
+            <package  name="DotNetSDK"     version="2.0-4"        />                                            
+            <package  name="IncrediBuild"  version="3.61.1.1243"  />                                            
+            <package  name="iphonesdk"     version="7.0-proxy-1"  /> <!--   trailing edge: 5.0-proxy-2      --> 
+            <package  name="ps3sdk"        version="440.001-lite" /> <!--   trailing edge: 420.001-lite     --> 
+            <package  name="snvsi"         version="1.8.8"        /> <!--   trailing edge: 1.8.11           --> 
+            <package  name="UnixGCC"       version="0.07.00"      /> <!--   trailing edge: 0.06.00          --> 
+            <package  name="VisualStudio"  version="11.0.50727-3" /> <!--   trailing edge: 10.0.40219-2-sp1 --> 
+            <package  name="WindowsSDK"    version="8.0.50727-2"  /> <!--   trailing edge: 7.1.7600.0.30514 --> 
+            <package  name="xenonsdk"      version="2.0.21256.1"  /> <!--   trailing edge: 2.0.21173.4      --> 
+        </grouptype>
+        <grouptype name="documentation">
+            <package  name="CriterionDocTools"  version="1.2.2" />       
+            <package  name="Doxygen"            version="1.7.5" />       
+            <package  name="GraphViz"           version="2.6.0" />       
+            <package  name="Saxon"              version="8.7.3" />       
+        </grouptype>
+        <grouptype name="examples">
+            <package  name="meshoperate_base"                version="2.08.00" />                                   
+            <package  name="meshoperate_halfedgemesh"        version="2.03.05" />                                   
+            <package  name="meshoperate_serialization"       version="2.04.01" />                                   
+            <package  name="serialization_imaging_archives"  version="1.08.00" />                                   
+            <package  name="serialization_xml_archive"       version="3.09.02" />                                   
+            <package  name="UTFXml"                          version="3.08.04" /> <!--   trailing edge: 3.08.01 --> 
+        </grouptype>
+        <grouptype name="packages">
+            <package  name="coreallocator"           version="1.04.00" /> <!--   trailing edge: 1.03.10 --> 
+            <package  name="EAAssert"                version="1.04.00" /> <!--   trailing edge: 1.03.02 --> 
+            <package  name="EABase"                  version="2.01.00" /> <!--   trailing edge: 2.00.33 --> 
+            <package  name="eacollision_features"    version="1.08.00" />                                   
+            <package  name="eacollision_primitives"  version="1.17.02" />                                   
+            <package  name="eaphysics_base"          version="1.07.00" />                                   
+            <package  name="EASTL"                   version="2.02.00" /> <!--   trailing edge: 1.15.03 --> 
+            <package  name="EAThread"                version="1.21.00" /> <!--   trailing edge: 1.18.00 --> 
+            <package  name="PPMalloc"                version="1.22.00" /> <!--   trailing edge: 1.19.00 --> 
+            <package  name="rwmath"                  version="1.27.00" /> <!--   trailing edge: 1.20.00 --> 
+            <package  name="serialization"           version="1.10.00" />                                   
+            <package  name="serialization_rwmath"    version="1.10.00" />                                   
+        </grouptype>
+        <grouptype name="tests">
+            <package  name="EAIO"    version="2.20.00" /> <!--   trailing edge: 2.16.02 --> 
+            <package  name="EAStdC"  version="1.14.00" /> <!--   trailing edge: 1.08.04 --> 
+        </grouptype>
+    </masterversions>
+    <packageroots>
+        <packageroot>${nant.location}/../../..</packageroot>
+        <packageroot>../..</packageroot>
+    </packageroots>
+    <ondemand>true</ondemand>
+    <buildroot>build</buildroot>
+    <config package="eaconfig" default="pc-vc-dev-debug" includes="pc-vc-dev-debug"/>
+    <globalproperties>
+        buildutils.debugvisualizationpatching=off
+        package.rwfilesystem.useEAStdC=true
+        runtime.job_manager.warningsuppression.ps3
+        antphysics.runtime.userwcore=false
+        databuilders_base.userwcore=false
+        eaconfig.build-MP=""
+        eaconfig.debugsymbols
+        eaconfig.xenon.forceredeploy=true
+        eaphysics_characters.debugsupport=true
+        ExcludeFifaTouchPlugins
+        ExcludeHumanIK=true
+        ForPhysicsDevBranchOnly=true
+        iphone-extra-frameworks="GLKit"
+        march=armv7-a
+        mfpu=neon
+        AppKit
+        -framework
+        OpenGL
+        QuartzCore
+        AudioUnit
+        CoreAudio"
+        package.AndroidSDK.EnableGLESv2=true
+        package.AndroidSDK.EnableOpenSLES=true
+        package.eaphysics_base.userwcore=false
+        package.unit.use_eamain_report=true
+        package.UnixClang.include-SDL-lib=true
+        package.UnixGCC.include-SDL-lib=true
+        physics.userwcore=false
+        plugins
+        visualdebugger_base.enableio
+        sncompilertest
+        runtime.rwstl.warningsuppression.ps3
+        test_packages
+        runtime.eacollision_convexhull.warningsuppression.ps3
+        UTFSockets.UTFSOCKETS_AUTO_INIT=0
+        visualdebugger_base.64bit_ids
+        visualdebugger_base.support_rwcollision_volumes=true
+        visualdebugger_base.support_rwphysics_base=false
+        visualdebugger_base.support_rwphysics_parts=true
+        visualdebugger_base.userwcore=false
+        xaml-add-windows-forms-dll=true
+        xcode-application-directory="Xcode.app"
+    </globalproperties>
+</project>
