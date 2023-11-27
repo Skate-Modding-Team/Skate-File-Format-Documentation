@@ -1,0 +1,4 @@
+--RenderWare Collision Clustered Mesh Object Structure--
+[offset, type, name]
+
+#TODO: Fill out :)
