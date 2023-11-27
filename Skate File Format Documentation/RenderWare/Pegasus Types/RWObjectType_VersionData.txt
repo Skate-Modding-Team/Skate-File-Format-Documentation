@@ -1,0 +1,10 @@
+--RenderWare Version Object Structure--
+[offset, type, name]
+
+#TODO: Add the values for each game when I get home
+
+  VersionData
+  {
+0x00  uint32 m_uiVersion
+0x04  uint32 m_uiRevision
+  }
