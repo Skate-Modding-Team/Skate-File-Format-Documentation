@@ -1,0 +1,84 @@
+--RenderWare Spline Data Object Structure--
+[offset,type,name]
+
+  Header
+  {
+0x00  uint32 m_uiNumSplines
+0x04  uint32 m_uiNumSegments
+0x08  uint32 m_Splines //offset
+0x0C  uint32 m_Segments //offset
+  }
+
+  Spline Header
+  {
+0x00  uint64 m_uiGuid
+0x08  uint64 m_uiGuidLocal
+0x10  uint32 m_Instance //Instance Index
+0x14  uint32 m_Head //segment Index
+0x18  uint32 m_Tail //segment Index
+0x1C  uint32 m_Pad
+  }
+
+  Spline Segment
+  {
+    Matrix44 m_BasisMatrix
+    {
+      Vector4 xAxis
+      {
+0x00    float x
+0x04    float y
+0x08    float z
+0x0C    float w 
+      }
+      Vector4 yAxis
+      {
+0x10    float x
+0x14    float y
+0x18    float z
+0x1C    float w 
+      }
+      Vector4 zAxis
+      {
+0x20    float x
+0x24    float y
+0x28    float z
+0x2C    float w 
+      }
+      Vector4 wAxis
+      {
+0x30    float x
+0x34    float y
+0x38    float z
+0x3C    float w 
+      }
+    }
+    Vector4 m_Inverse
+    {
+0x40    float x
+0x44    float y
+0x48    float z
+0x4C    float w 
+    }
+    AABB m_BBox
+    {
+      Vector4 m_Min
+      {
+0x50    float x
+0x54    float y
+0x58    float z
+0x5C    float w 
+      }
+      Vector4 m_Max
+      {
+0x60    float x
+0x64    float y
+0x68    float z
+0x6C    float w 
+      }
+    }
+0x70  float  m_fLength
+0x74  float  m_fDistance
+0x78  uint32 m_Spline //Index of Spline Header
+0x7C  uint32 m_Prev  //Spline Segment Index
+0x80  uint32 m_Next  //Spline Segment Index
+  }
