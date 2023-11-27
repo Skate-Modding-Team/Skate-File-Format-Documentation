@@ -1,0 +1,80 @@
+--Renderware Arena Instance Data Structure--
+[offset, type, name]
+#TODO: fill this out for skate 1.
+
+  Header
+  {
+0x00  uint32 m_typeID
+0x04  uint32 m_uiNumInstances
+0x08  uint32 m_uiNumStrings
+0x0C  uint32 m_Instances //offset
+0x10  uint32 m_StringList //offset
+  }
+
+#TODO: fill this out for skate 1.
+//skate it, 2, and 3
+  Instance
+  {
+    Matrix44Affine m_TransformMatrix
+    {
+      Vector4 xAxis
+      {
+0x00    float x
+0x04    float y
+0x08    float z
+0x0C    float w 
+      }
+      Vector4 yAxis
+      {
+0x10    float x
+0x14    float y
+0x18    float z
+0x1C    float w 
+      }
+      Vector4 zAxis
+      {
+0x20    float x
+0x24    float y
+0x28    float z
+0x2C    float w 
+      }
+      Vector4 wAxis
+      {
+0x30    float x
+0x34    float y
+0x38    float z
+0x3C    float w 
+      }
+    }
+    AABB m_BBox
+    {
+      Vector4 m_Min
+      {
+0x40    float x
+0x44    float y
+0x48    float z
+0x4C    float w 
+      }
+      Vector4 m_Max
+      {
+0x50    float x
+0x54    float y
+0x58    float z
+0x5C    float w 
+      }
+    }
+0x60  uint64 m_uiGuid
+0x68  uint64 m_uiGuidLocal
+      AttribPair m_AttribKey
+      {
+0x70    uint64 m_ClassKey
+0x78    uint64 m_InstanceKey
+      }
+0x80  uint32 m_pRModel //id of Arena dictionary entry
+0x84  uint32 m_pCModel //id of Arena dictionary entry
+0x88  uint32 m_pEmbedded //id of Arena dictionary entry
+0x8C  uint32 m_Name //offset (Asset name; these string pointers start from the string offset in the header)
+0x90  uint32 m_Description //offset
+0x94  uint32 m_Component //offset
+0x98  uint32 m_Category //offset
+  }
