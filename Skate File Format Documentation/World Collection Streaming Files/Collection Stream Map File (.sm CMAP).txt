@@ -1,0 +1,25 @@
+--Collection/Stream Map Structure--
+[offset, type, name]
+
+	Header
+	{
+0x00	uint32 m_ID 0x434D4150 (CMAP)
+0x04 	uint32 m_uiVersion
+0x08	uint64 m_uiStamp
+0x10 	uint32 m_uiNumCollections //ie num entries
+0x14	uint32 m_StreamFormat // 0 = Raw; 1 = Compressed; 2 = Compressed Arena; 3 = CompressedChunkArena
+0x18	uint32 m_NameTable //offset
+0x1C 	uint32 unused
+	}
+
+	Entry
+	{
+0x00	uint64 m_ID
+0x08 	uint64 m_ParentID
+0x10 	uint32 m_uiOffset
+0x14 	uint32 m_uiSize
+0x18 	uint32 m_uiNumAssets
+0x1C 	Str 64 m_CollectionFileName
+0x5C 	uint32 m_Name //offset
+0x60 	uint64 m_BigFatAlignmentPad //padding :)
+	}
