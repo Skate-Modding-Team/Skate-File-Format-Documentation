@@ -1,0 +1,25 @@
+--RenderWare Table of Contents Object Structure--
+[offset, type, name]
+
+  Header
+  {
+0x00  uint32 m_uiItemsCount
+0x04  uint32 m_pArray //offset
+0x08  uint32 m_pNames //offset
+0x0C  uint32 m_uiTypeCount
+0x10  uint32 m_pTypeMap //offset
+  }
+
+  TOC Entry
+  {
+0x00  uint32 m_Name //offset from names offset
+0x04  uint64 m_uiGuid
+0x0C  uint32 m_Type //RwObjectTypeID
+0x10  uint32 m_pObject //ArenaDictionaryEntry Pointer or Arena Subreference Pointer
+  }
+
+  Type Map Entry
+  {
+0x00  uint32 m_Type //RwObjectTypeID
+0x04  uint32 m_uiIndex
+  }
