@@ -1,0 +1,5 @@
+--RenderWare Lion Data Object--
+[offset, type, name]
+0x00 uint32 m_iDummy
+
+this is literally all it is :)
