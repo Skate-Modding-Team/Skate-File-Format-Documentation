@@ -1,0 +1,50 @@
+--Collection/Stream Asset Table of Contents Structure--
+[offset, type, name]
+
+	Header
+	{
+0x00	uint32 m_ID 0x41544F43 (ATOC)
+0x04 	uint32 m_uiVersion
+0x08	uint64 m_uiStamp
+0x10 	uint32 m_uiNumAssets //ie num entries
+0x14	uint32 m_Names //offset
+	}
+
+	Entry
+	{
+0x00	uint64 m_ID
+0x08 	uint32 m_Type // never seen this be anything other than 0xAB329A6A
+0x0C 	uint32 m_uiSize
+
+  		ResourceDescriptor m_resourceDescriptor
+  		{
+	  		BaseResourceDescriptor 
+			{
+0x10			uint32 size 	
+0x14			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x18			uint32 size
+0x1C			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x20			uint32 size
+0x24			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x28			uint32 size
+0x2C			uint32 alignment //alignment will be 1 if unused
+			}
+	  		BaseResourceDescriptor
+			{
+0x30			uint32 size
+0x34			uint32 alignment //alignment will be 1 if unused
+			}
+
+0x38	uint32 m_Name //offset
+0x3C	uint32 m_uiUnused1
+  		}
+	}
